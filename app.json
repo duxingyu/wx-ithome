@@ -1,0 +1,28 @@
+{
+  "pages": ["pages/index/index", "pages/circle/circle", "pages/news/news", "pages/topic/topic"],
+  "window": {
+    "navigationBarBackgroundColor": "#d22222",
+    "navigationBarTitleText": "IT之家lite",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 100
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "资讯",
+        "iconPath": "img/index.png",
+        "selectedIconPath": "img/indexs.png"
+      },
+      {
+        "pagePath": "pages/circle/circle",
+        "text": "圈子",
+        "iconPath": "img/circle.png",
+        "selectedIconPath": "img/circles.png"
+      }
+    ],
+    "color": "474a4f",
+    "selectedColor": "#d22222"
+  },
+  "debug": true
+}
