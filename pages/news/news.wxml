@@ -1,0 +1,23 @@
+<view class="news">
+  <view class="head">
+    <text class="title">{{news.title['#text']}}</text>
+    <text class="other">
+      <text>{{news.postdate['#text']}}</text>
+      <text>{{news.newssource['#text']}}({{news.newsauthor['#text']}})</text>
+    </text>
+  </view>
+  <view class="body">
+    <view>
+      <import src="../../wxParse/wxParse.wxml" />
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      <text class="z">责编：{{news.z['#text']}}</text>
+    </view>
+    <view class="relate">
+      <text class="desc">相关文章</text>
+      <navigator wx:for="{{relate}}" wx:key="item.newsid" url="/pages/news/news?id={{item.newsid}}" class="crt ellipsis">
+        <text class="title">{{item.newstitle}}</text>
+        <text class="time">{{item.postdate}}</text>
+      </navigator>
+    </view>
+  </view>
+</view>

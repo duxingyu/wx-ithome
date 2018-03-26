@@ -1,0 +1,37 @@
+<template name="reply">
+  <view class="info">
+    <text class="author">{{N}}</text>
+    <text class="f">{{F}}楼</text>
+  </view>
+  <text class="time">{{T}}</text>
+  <view class="crt">
+    <import src="../../wxParse/wxParse.wxml" />
+    <template is="wxParse" data="{{wxParseData:C.nodes}}" />
+  </view>
+</template>
+
+<view class="topic">
+  <!-- 话题信息 -->
+  <view class="head">
+    <text class="title">{{info.c}} {{info.t}}</text>
+    <text class="other">
+      <text class="vc">{{info.vc}}</text>
+      <text class="rc">{{info.rc}}</text>
+    </text>
+  </view>
+  <!-- 回复 -->
+  <view class="list">
+  <!-- 1楼 -->
+    <view class="l l1">
+      <template is="reply" data="{{...d}}" /> 
+    </view>
+    <!-- 其他楼 -->
+    <view wx:for="{{replylist}}" wx:key="item.N" class="l">
+      <template is="reply" data="{{...item}}" /> 
+      <!-- 楼中楼 -->
+      <view wx:if="{{item.R.length}}" wx:for="{{item.R}}" wx:for-item="i" wx:key="i.N" class="l lx">
+        <template is="reply" data="{{...i}}" />
+      </view>
+    </view>
+  </view>
+</view>

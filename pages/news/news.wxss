@@ -1,0 +1,64 @@
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.head {
+  background: #d22222;
+  padding: 10px;
+}
+.head .title {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.5;
+}
+.head .other {
+  font-size: 12px;
+  color: #ccc;
+  line-height: 2;
+}
+.head .other text {
+  margin-right: 10px;
+}
+
+.z {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #888;
+  line-height: 2;
+}
+.relate {
+  padding: 10px;
+}
+.relate .desc {
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+}
+.relate .desc::before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 10;
+  left: -10px;
+  top: 0;
+  width: 10px;
+  height: 21px;
+  background: #d22222;
+}
+.crt {
+  font-size: 16px;
+  line-height: 2;
+}
+.crt:not(:last-child) {
+  border-bottom: 1px solid #aaa;
+}
+.relate .title {
+  font-size: 16px;
+}
+.relate .time {
+  display: block;
+  color: #888;
+  font-size: 12px;
+}

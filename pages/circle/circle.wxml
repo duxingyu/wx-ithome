@@ -1,0 +1,13 @@
+<navigator url="/pages/topic/topic?id={{item.id}}&N={{item.un}}&T={{item.pt}}&c={{item.c}}&t={{item.t}}&vc={{item.vc}}&rc={{item.rc}}" wx:for="{{circlelist}}" wx:key="item.id">
+  <view class="circle" > 
+    <text class="title">{{item.c}} {{item.t}}</text>
+    <view class="crt">
+      <text class="author">{{item.un}} {{item.rt}}</text>
+      <text class="other">
+        <text class="cn">{{item.cn}}</text>
+        <text class="vc">{{item.vc}}</text>
+        <text class="rc">{{item.rc}}</text>
+      </text>
+    </view>
+  </view>
+</navigator>

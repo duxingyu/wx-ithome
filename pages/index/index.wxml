@@ -1,0 +1,38 @@
+<view class="home">
+  <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" circular="{{true}}">
+    <block wx:for="{{slide}}" wx:key="item.image">
+      <swiper-item>
+        <navigator url="/pages/news/news?id={{item.link['#text']}}">
+          <image src="{{item.image['#text']}}" class="slide-image" />
+        </navigator>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view wx:for="{{newslist}}" wx:key="item.newsid">
+    <navigator url="/pages/news/news?id={{item.newsid}}" class="list">
+      <view wx:if="{{!item.imagelist}}" class="list1">
+        <image src="{{item.image}}" class="list-img" />
+        <view class="crt">
+          <text class="title">{{item.title}}</text>
+          <view wx:if="{{item.imagelist}}">
+            <image src="{{val}}" wx:for="{{item.imagelist}}" wx:for-item="val" wx:for-index="i" wx:key="val" />
+          </view>
+          <view class="other">
+            <text class="time">{{item.postdate}}</text>
+            <text class="comment">{{item.commentcount}}评</text>
+          </view>
+        </view>
+      </view>
+      <view wx:else class="crt list2">
+        <text class="title">{{item.title}}</text>
+        <view wx:if="{{item.imagelist}}">
+          <image src="{{val}}" wx:for="{{item.imagelist}}" wx:for-item="val" wx:for-index="i" wx:key="val" />
+        </view>
+        <view class="other">
+          <text class="time">{{item.postdate}}</text>
+          <text class="comment">{{item.commentcount}}评</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view> 

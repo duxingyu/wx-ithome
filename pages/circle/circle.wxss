@@ -1,0 +1,25 @@
+.circle {
+  border-bottom: 1px solid #cdcdcd;
+  padding: 10px 10px 0 10px;
+}
+.title {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.crt {
+  display: flex;
+  color: #cdcdcd;
+  font-size: 12px;
+  justify-content: space-between;
+  line-height: 32px;
+}
+.other {
+  line-height: 32px;
+}
+.author {
+  /* flex-grow: 1; */
+}
+.other text {
+  margin-left: 10px;
+}

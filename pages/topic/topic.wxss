@@ -1,0 +1,55 @@
+.head {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 0 10px;
+}
+.head:not(:last-child) {
+  border-bottom: 1px solid #999;
+}
+.head .title {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.head .other {
+  font-size: 12px;
+  line-height: 32px;
+  color: #cdcdcd;
+}
+.head .other text {
+  margin-right: 10px;
+}
+
+.list {
+  padding: 10px;
+}
+.l {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.l:not(:last-child) {
+  border-bottom: 1px solid #999;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.5;
+}
+.info .author {
+  color: rgb(63, 63, 194);
+  font-size: 14px;
+}
+.info .f,
+.time {
+  color: #999;
+  font-size: 12px;
+}
+
+.crt {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.lx {
+  padding: 10px;
+  background: rgb(228, 227, 187);
+}
