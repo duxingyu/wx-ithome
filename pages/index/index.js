@@ -5,7 +5,7 @@ Page({
   data: {
     newslist: [],
     slide: [],
-    lastDate: 0,
+    // lastDate: 0,
   },
   onLoad() {
     this.getList('start');
@@ -14,9 +14,10 @@ Page({
   onPullDownRefresh() {
     this.getList('refresh');
   },
-  onReachBottom() {
-    this.getList('load');
-  },
+  // 下拉加载参数不正确，获取不到之前的新闻列表
+  // onReachBottom() {
+  //   this.getList('load');
+  // },
   getSlide() {
     wx.request({
       url: 'https://api.ithome.com/xml/slide/slide.xml',
@@ -35,24 +36,24 @@ Page({
     if (state === 'refresh') {
       this.data.newslist = [];
     }
-    if (state === 'start' || state === 'refresh') {
-      this.data.lastDate = Date.now();
-    }
+    // if (state === 'start' || state === 'refresh') {
+    //   this.data.lastDate = Date.now();
+    // }
     this.setData({
       newslist: this.data.newslist,
-      lastDate: this.data.lastDate,
+      // lastDate: this.data.lastDate,
     });
     wx.request({
       url: 'https://api.ithome.com/json/newslist/news',
       data: {
-        r: this.data.lastDate,
+        r: Date.now(),
       },
       success: res => {
         const list = res.data.newslist.filter(val => {
           return !val.lapinid;
         });
 
-        this.data.lastDate = +new Date(list[list.length - 1].postdate);
+        // this.data.lastDate = +new Date(list[list.length - 1].postdate);
 
         list.forEach(val => {
           val.postdate = util.formatTime(val.postdate);
@@ -61,7 +62,7 @@ Page({
 
         this.setData({
           newslist: this.data.newslist,
-          lastDate: this.data.lastDate,
+          // lastDate: this.data.lastDate,
         });
         if (state === 'refresh') wx.stopPullDownRefresh();
       },
