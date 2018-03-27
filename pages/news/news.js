@@ -7,10 +7,15 @@ Page({
     news: {},
     content: '',
     relate: [],
+    title: '',
   },
   onLoad: function(options) {
     this.getNews(options.id);
     this.getRelate(options.id);
+    this.data.title = options.title;
+    this.setData({
+      title: this.data.title,
+    });
   },
   getNews(id) {
     wx.request({
@@ -22,6 +27,7 @@ Page({
         this.setData({
           news: this.data.news,
         });
+        console.log(this.data.news);
       },
       fail: err => {
         console.log(err);

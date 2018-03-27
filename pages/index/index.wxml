@@ -2,14 +2,14 @@
   <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{500}}" circular="{{true}}">
     <block wx:for="{{slide}}" wx:key="item.image">
       <swiper-item>
-        <navigator url="/pages/news/news?id={{item.link['#text']}}">
+        <navigator url="/pages/news/news?id={{item.link['#text']}}&title={{item.title['#text']}}">
           <image src="{{item.image['#text']}}" class="slide-image" />
         </navigator>
       </swiper-item>
     </block>
   </swiper>
   <view wx:for="{{newslist}}" wx:key="item.newsid">
-    <navigator url="/pages/news/news?id={{item.newsid}}" class="list">
+    <navigator url="/pages/news/news?id={{item.newsid}}&title={{item.title}}" class="list">
       <view wx:if="{{!item.imagelist}}" class="list1">
         <image src="{{item.image}}" class="list-img" />
         <view class="crt">
