@@ -5,8 +5,8 @@
 ## 截图展示
 
 <p>
-  <img alt="新闻列表" src="./screenshots/index.jpg" width="25%" />
-  <img alt="新闻详情" src="./screenshots/news.jpg" width="25%" />
-  <img alt="圈子列表" src="./screenshots/circle.jpg" width="25%" />
-  <img alt="圈子详情" src="./screenshots/topic.jpg" width="25%" />
+  <img alt="新闻列表" src="./screenshots/index.jpg" width="24%" />
+  <img alt="新闻详情" src="./screenshots/news.jpg" width="24%" />
+  <img alt="圈子列表" src="./screenshots/circle.jpg" width="24%" />
+  <img alt="圈子详情" src="./screenshots/topic.jpg" width="24%" />
 </p>
